@@ -66,11 +66,12 @@ export async function POST(request) {
 
           results.priceChanges++;
 
-          if (newPrice < oldPrice) {
+          if (true) {
             //ALERT
             const {
               data: { user },
             } = await supabase.auth.admin.getUserById(product.user_id);
+            console.log("User email:", user?.email);
 
             if (user?.email) {
                //SEND EMAIL
